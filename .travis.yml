@@ -1,4 +1,4 @@
-language: generic 
+
 sudo: required
 services:
   - docker
@@ -7,4 +7,4 @@ before_install:
   - docker build -t willyddn/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true willyddn/docker-react npm run test
+  - docker run willyddn/docker-react npm run test -- --coverage
