@@ -8,3 +8,18 @@ before_install:
 
 script:
   - docker run willyddn/docker-react npm run test -- --coverage
+
+#UirWgKD1wRqXsxTKZuke6oIpsPjZF79LWD4OHByd clé secrète
+#AKIAVWAC77EPR6FMQINE 
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-3"
+  app: "docker"
+  env: "Docker-env"
+  bucket-name: "elasticbeanstalk-eu-west-3-390848313631"
+  bucket-path: "docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_key_id:
+    secure: "$AWS_SECRET_KEY"
