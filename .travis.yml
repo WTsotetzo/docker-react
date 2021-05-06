@@ -7,7 +7,7 @@ before_install:
   - docker build -t willyddn/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true USERNAME/docker-react npm run test
+  - docker run -e CI=true willyddn/docker-react npm run test
 
 #UirWgKD1wRqXsxTKZuke6oIpsPjZF79LWD4OHByd clé secrète
 #AKIAVWAC77EPR6FMQINE 
