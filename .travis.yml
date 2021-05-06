@@ -1,4 +1,4 @@
-
+language: generic
 sudo: required
 services:
   - docker
@@ -7,7 +7,7 @@ before_install:
   - docker build -t willyddn/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run willyddn/docker-react npm run test -- --coverage
+  - docker run -e CI=true USERNAME/docker-react npm run test
 
 #UirWgKD1wRqXsxTKZuke6oIpsPjZF79LWD4OHByd clé secrète
 #AKIAVWAC77EPR6FMQINE 
@@ -22,4 +22,4 @@ deploy:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_key_id:
-    secure: "$AWS_SECRET_KEY"
+    secure: $AWS_SECRET_KEY
